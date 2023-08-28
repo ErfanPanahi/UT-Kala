@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "structs.h"
+#include "get_string.h"
+#include "new_temp.h"
+#include "signup.h"
+#include "check_login.h"
+#include "login_orders.h"
+#include "main_loop.h"
+int main() {
+	struct user  **buyer, **seller;
+	struct goods **goods, **bought_goods;
+	seller = (struct user **)malloc(sizeof(struct user*));
+	buyer = (struct user **)malloc(sizeof(struct user*));
+	goods = (struct goods **)malloc(sizeof(struct goods*));
+	bought_goods = (struct goods **)malloc(sizeof(struct goods*));
+	main_loop(seller, buyer, goods, bought_goods);
+	free(seller);
+	free(buyer);
+	free(goods);
+	free(bought_goods);
+}
